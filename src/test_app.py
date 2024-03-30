@@ -4,8 +4,6 @@ from main import app
 
 client = TestClient(app)
 
-# Каждый тест по отдельности работает. Но вместе - ошибка  AttributeError: 'NoneType' object has no attribute 'send'.
-
 def test_get_short_url():
     test_url = 'http://example.com'
     request_url = f'{app.url_path_for('get_short_url')}?url={test_url}'
